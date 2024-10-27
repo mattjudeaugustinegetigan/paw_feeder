@@ -5,12 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{% block title %}PETFEEDER{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Inline styles for the navigation */
+        nav {
+            background-color: #333; /* Dark background for contrast */
+            padding: 10px;
+        }
+
+        nav a {
+            color: white; /* White font color for navigation links */
+            text-decoration: none; /* Remove underline from links */
+            margin: 0 15px; /* Spacing between links */
+            font-weight: bold; /* Make font bold */
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
         <nav>
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'login' %}">Login</a>

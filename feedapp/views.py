@@ -10,16 +10,16 @@ def home(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)  # Use AuthenticationForm for login
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')  # Redirect to homepage after successful login
+                return redirect('home')  # Redirect to homepage after login
             else:
-                messages.error(request, "No user found with this username or invalid password.")  # Error message
+                messages.error(request, "Invalid username or password.")  # Error message
         else:
             messages.error(request, "Invalid username or password.")  # Error message
     else:
@@ -58,4 +58,4 @@ def add_pet(request):
     return render(request, 'feedapp/add_pet.html')
 
 def add_dogorcat(request):
-    return render(request, 'feedapp/add_dogorcat.html')
+    return render(request, 'feedapp/add_dogorcat.html')  
