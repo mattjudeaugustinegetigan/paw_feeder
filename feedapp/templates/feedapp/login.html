@@ -23,6 +23,14 @@
             <div class="form-container">
                 <h2>WELCOME BACK!</h2>
                 <p>Please enter your details.</p>
+
+                <!-- Display messages for feedback -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message error">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
                 <form method="POST" class="login-form">
                     {% csrf_token %}
                     <input type="text" name="username" placeholder="Enter your username" required>
