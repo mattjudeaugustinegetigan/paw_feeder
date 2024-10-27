@@ -1,0 +1,55 @@
+{% extends 'feedapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Feeder - Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'feedapp/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'feedapp/css/signup.css' %}">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="left-section">
+            <div class="background-overlay"></div> <!-- Overlay for background effect -->
+            <div class="logo-container"> <!-- Logo container -->
+                <img src="{% static 'feedapp/images/logo.png' %}" alt="Paw Feeder Logo" class="logo">
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="form-box">
+                <h2>Join Us!</h2>
+                <p>Create your account by filling in the details below.</p>
+                <form method="POST" class="signup-form">
+                    {% csrf_token %}
+                    
+                    <!-- Username Field with Helper Text -->
+                    <div class="input-container">
+                        <input type="text" name="username" placeholder="Choose a username" required>
+                        <div class="helper-text">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+                    </div>
+
+                    <!-- Password Field with Helper Text -->
+                    <div class="input-container">
+                        <input type="password" name="password1" placeholder="Enter your password" required>
+                        <div class="helper-text">Your password must contain at least 8 characters, and it can’t be too similar to your personal information or a common password.</div>
+                    </div>
+
+                    <!-- Password Confirmation Field with Helper Text -->
+                    <div class="input-container">
+                        <input type="password" name="password2" placeholder="Confirm your password" required>
+                        <div class="helper-text">Enter the same password as before, for verification.</div>
+                    </div>
+
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

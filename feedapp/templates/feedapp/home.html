@@ -1,0 +1,48 @@
+{% extends 'feedapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Feeder - Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'feedapp/css/home.css' %}">
+</head>
+<body>    
+    <div class="banner">
+        <ul><img src="{% static 'feedapp/images/logo.png' %}" width="70px" height="70px" alt="Logo"></ul>
+        <div class="header">
+            <div>Hello, {% if request.user.is_authenticated %}{{ request.user.username }}{% else %}Guest{% endif %}</div>
+        </div>
+    </div>
+
+    <div class="imgcontainer">
+        <img src="{% static 'feedapp/images/hi.png' %}" alt="Greeting Image">
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-group">
+                <h1>Keep your Furbabies happy and healthy, <br> 
+                    track meals effortlessly with <span style="color: #EF8B52;">Paw Feeder!</span>
+                </h1>
+                <br>
+                <h3>Create personalized meal plans and get real-time <br>notifications for your pet's feeding schedule. 
+                    <br>Add your pet's details below to ensure they never miss a meal!
+                </h3>
+                <br>
+                <br>
+                <!-- Add Pet Form -->
+                <form action="{% url 'add_dogorcat' %}" method="post">
+                    {% csrf_token %}
+                    <!-- Add form fields here if needed -->
+                    <button type="submit" name="btnAddPet" class="addpetbtn">+ Add Pet</button>
+                </form>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

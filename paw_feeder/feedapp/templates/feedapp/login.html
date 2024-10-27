@@ -1,0 +1,15 @@
+{% extends 'feedapp/base.html' %} 
+{% load static %}
+
+
+
+{% block content %}
+<h2>Welcome Back!</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter Username">
+    <input type="password" name="password" placeholder="Enter Password">
+    <button type="submit">Login</button>
+</form>
+<p><a href="{% url 'signup' %}">Sign up</a> | Forgot password?</p>
+{% endblock %}

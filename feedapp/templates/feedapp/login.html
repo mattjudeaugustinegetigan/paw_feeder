@@ -1,0 +1,44 @@
+{% extends 'feedapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Feeder - Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'feedapp/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'feedapp/css/login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-section">
+            <div class="background-overlay"></div>
+            <div class="logo-container">
+                <img src="{% static 'feedapp/images/logo.png' %}" alt="Paw Feeder Logo" class="logo">
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="form-container">
+                <h2>WELCOME BACK!</h2>
+                <p>Please enter your details.</p>
+                <form method="POST" class="login-form">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Enter your username" required>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">Sign in</button>
+                </form>
+                <p>Don't have an account? <a href="{% url 'signup' %}">Sign up for free!</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

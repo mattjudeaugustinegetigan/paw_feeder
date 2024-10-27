@@ -1,0 +1,12 @@
+{% extends 'feedapp/base.html' %}
+
+{% block content %}
+<h2>Add a New Pet</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Pet Name">
+    <input type="number" name="age" placeholder="Pet Age">
+    <input type="text" name="breed" placeholder="Pet Breed">
+    <button type="submit">Add Pet</button>
+</form>
+{% endblock %}

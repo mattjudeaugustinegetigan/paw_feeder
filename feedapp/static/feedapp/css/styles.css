@@ -1,0 +1,35 @@
+/* Existing Styles */
+body {
+    background-color: #F5D1A6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FFA07A;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.content {
+    margin: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #FFA07A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF7F50;
+}

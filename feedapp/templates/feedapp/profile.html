@@ -1,0 +1,11 @@
+{% extends 'feedapp/base.html' %}
+
+{% block content %}
+<h1>Hello, {{ user.username }}</h1>
+<ul>
+    {% for pet in pets %}
+        <li>{{ pet.name }} - {{ pet.breed }} ({{ pet.age }} years old)</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_pet' %}">Add Another Pet</a>
+{% endblock %}

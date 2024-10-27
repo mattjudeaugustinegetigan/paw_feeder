@@ -1,0 +1,34 @@
+{% extends 'feedapp/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Feeder - Add Pet</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'add_dogorcat.css' %}">
+</head>
+<body>    
+  <div class="banner">
+      <ul><img src ="{% static 'feedapp/images/logo.png' %}" width="70px" height="70px"></ul>
+        <div class="header">
+            <div>Hello, *to Add Username
+            </div>
+        </div>
+      </div>
+<div class="container">
+        <div class="card">
+            <h4>Add Your Dog's Furbaby Here!</h4>
+            <img src="{% static 'feedapp/images/dog.png' %}" alt="Dog Profile" class="profile-image"><br>
+            <button class="add-btn">Add Pet</button>
+        </div>
+
+        <div class="card">
+          <h4>Add Your Cat's Furbaby Here!</h4>
+            <img src="{% static 'feedapp/images/cat.jpg' %}" alt="Cat Profile" class="profile-image"><br>
+            <button class="add-btn">Add Pet</button>
+        </div>
+    </div>
+</body>
+</html>

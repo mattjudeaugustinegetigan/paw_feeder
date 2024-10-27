@@ -1,0 +1,44 @@
+{% extends 'feedapp/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Feeder - Home</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>    
+  <div class="banner">
+      <ul><img src ="logo.png" width="70px" height="70px"></ul>
+        <div class="header">
+            <div>Hello, *to Add Username
+            </div>
+        </div>
+      </div>
+  <div class=imgcontainer>
+    <img src="hi.png">
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <div class="form-group">
+      <h1>Keep  your  Furbabies
+          happy and healthy, <br> 
+          track meals effortlessly 
+          with <span style="color: #EF8B52;"> Paw  Feeder!</span></h1><br>
+          <h3>Create personalized meal plans and get real-time <br>notifications for your pet's feeding schedule. 
+          <br>Add your pet's details below to ensure they never miss a meal!</h3>
+        <br>
+        <br>
+        <button type="submit" name="btnAddPet" class="addpetbtn <a href="{% url 'add_pet' %}">Add Pet Details</a>">+ Add Pet</button>
+        <br>
+      </form>
+    </div> 
+  </div>
+</body>
+</html>
+
+
+
+{% endblock %}
